@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="index.css">
+    <title>Consulta do clima</title>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <p id="consulta">Consulta</p>
+    <img src="imagens/nuvens-e-sol.png" alt="Sol e nuvem" id="icone">
+    <h1 id="climatempo">Clima tempo</h1>
+
+    <div class="search">
+        <header><i class="bx bx-left-arrow-al"></i></header>
+        <section class="pesquisa">
+            <input type="text" id="city" placeholder="Consulte o clima na cidade de..." spellcheck="false">
+            <button type="submit" id="botao">Consultar clima</button>
+        </section>
+
+    </div>
+
+    <div id="resultadoPesquisa">
+        <div id="fundo">
+            <header><i class="bx bx-left-arrow-al"></i></header>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        document.getElementById("botao").addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const city = document.getElementById("city").value;
+
+            fetch(`http://localhost:3000/climatempo/${city}`)
+                .then((response) => response.json())
+                .then(data => {
+                    const resultadoPesquisa = document.getElementById('fundo');
+                    const formularioPesquisa = document.querySelector('.search');
+
+                    if (data.Temperatura) {
+                    
+                        const temperaturaArredondada = Math.round(data.Temperatura);
+                        const cidadeDecodificada = decodeURIComponent(data.Local);
+
+                        resultadoPesquisa.innerHTML = `
+                        <div class="localizacao">
+                            <p id="local"> ${cidadeDecodificada}</p>
+                            <img src="imagens/local.png" alt="localização" id="localizacao">
+                        </div>
+                      <div class="conteudo">
+                        <img class="img" src="imagens/termometro.png" alt="termômetro id="termometro">
+                        <p id="temp">  ${temperaturaArredondada}°C</p>
+                      </div>
+                      <p id="clima"><br> ${data.Clima}</p>
+                      <div class="dados-adicionais">
+                        <div class="quadrado-umidade">
+                          <p id="umidade">Umidade <br> ${data.Umidade}%</p>
+                        </div>
+                        <div class="quadrado-vento">
+                          <p id="vento">Vento <br> ${data.VelocidadeDoVento} m/s</p>
+                        </div>
+                      </div>
+                 `;
+                        formularioPesquisa.style.display = "none";
+                        document.getElementById("fundo").style.display = 'block';
+                    } else {
+                        resultadoPesquisa.innerHTML = "<p>Erro ao obter dados meteorológicos</p>";
+                    }
+                })
+                .catch((error) => console.error('Erro ao obter dados'));
+        });
+    </script>
+
+</body>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+</html>

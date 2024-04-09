@@ -1,0 +1,523 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: black;
+}
+
+#icone{
+    margin-bottom: -22px;
+    margin-left: 334px;
+    height: 55px;
+    width: 55px;
+}
+
+#consulta{
+    margin: 0;
+    margin-left: 390px;
+    margin-top: 170px;
+    margin-bottom: -60px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 27px;
+    color: white;
+}
+
+#climatempo{
+    margin: 0;
+    margin-bottom: -25px;
+    margin-left: 340px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 43px;
+    color: white;
+}
+
+
+.pesquisa{
+    width: 300px;
+    margin-left: 90px;
+    margin-top: 40px;
+    padding: 10px;
+    border-width: 1px;
+}
+
+#city{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 9px;
+    border-width: 1px;
+    width: 350px;
+    margin-left: -30px;
+
+}
+
+#botao{    
+    width: 150px;
+    margin-left: 70px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 5px;
+    color: white;
+    border-width: 1px;
+    background-color: blueviolet;
+    
+}
+
+.search{
+    background-color:   rgb(201, 156, 253);
+    width: 500px;
+    height: 200px;
+    margin-top: 30px;
+    margin-left: 500px;
+    border-radius: 20px
+}
+
+#fundo{
+    display: none;
+    background-color:  rgb(201, 156, 253);
+    width: 800px;
+    height: 450px;
+    margin-top: 30px;
+    margin-left: 300px;
+    border-radius: 20px; 
+}
+
+#local{
+    color: black;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    display: flexbox;
+}
+
+.localizacao{
+    margin: 0;
+    height: 30px;
+    width: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding: 10px;
+
+}
+
+#clima{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    margin-top: -43px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#umidade{ 
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+#vento{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+#termometro{
+    display: flex;
+    align-items: center;
+}
+
+#temp{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 84px;
+}
+
+.dados-adicionais {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 0px; 
+    margin-top: 50px;
+}
+
+.quadrado-umidade,
+.quadrado-vento {
+    background-color: rgb(182, 144, 243);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    padding: 50px; 
+    border-radius: 10px; 
+}
+
+#umidade,
+#vento {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.conteudo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.img{
+    width: 40px;
+}
+
+@media(max-width: 640px){
+    #icone {
+  
+        margin-left: 50px;
+        height: 45px;
+        width: 45px;
+    }
+    
+    #consulta {
+        margin: 0;
+        margin-left: 97px;
+        margin-top: 170px;
+        margin-bottom: -52px;
+        font-family: "Poppins", sans-serif;
+        font-size: 25px;
+        color: white;
+    }
+    
+    #climatempo {
+        margin: 0;
+        margin-bottom: -25px;
+        margin-left: 50px;
+        font-family: "Poppins", sans-serif;
+        font-size: 33px;
+        color: white;
+    }
+    
+    .pesquisa {
+        width: 300px;
+        margin-left: 90px;
+        margin-top: 40px;
+        padding: 10px;
+        border-width: 1px;
+    }
+    
+    #city {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        border-radius: 10px;
+        padding: 9px;
+        border-width: 1px;
+        width: 350px;
+        margin-left: -30px;
+    }
+    
+    #botao {
+        width: 150px;
+        margin-left: 70px;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        margin-top: 10px;
+        border-radius: 20px;
+        padding: 5px;
+        color: white;
+        border-width: 1px;
+        background-color: blueviolet;
+    }
+    
+    .pai-search{
+        display: flex;
+        justify-content: center;
+    }
+    .quadrado-umidade{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    .quadrado-vento{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    
+    .search {
+        background-color: rgb(201, 156, 253);
+        width: 500px;
+        height: 200px;
+        margin-top: 30px;
+        border-radius: 20px;
+    }
+    
+    #fundo {
+        display: none;
+        background-color: rgb(201, 156, 253);
+        width: 600px;
+        height: 300px;
+        margin-top: 30px;
+        margin-left: 22px;
+        border-radius: 10px;
+    }
+    #local {
+        color: black;
+        text-transform: capitalize;
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        display: flexbox;
+    }
+    .localizacao{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+    #temp {
+        display: flex;
+        align-items: center;
+        color: black;
+        font-family: "Poppins", sans-serif;
+        font-size: 35px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    #umidade {
+        color: black;
+        font-family: "Poppins", sans-serif;
+    }
+    .clima-temp{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #clima {
+        color: black;
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        font-size: 18px;
+        margin: 0;
+        margin-top: -43px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        padding: 10px;
+    }
+    
+    #vento {
+        color: black;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    #localizacao {
+        margin: 0;
+        height: 30px;
+        width: auto;
+    }
+    
+    .termometro {
+        height: 30px;
+        width: 30px;
+    }
+    
+    .quadrado-umidade,
+    .quadrado-vento {
+        flex-wrap: wrap;
+        background-color: rgb(182, 144, 243);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+    }
+    .quadrado-umidade{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .quadrado-vento{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #umidade #vento {
+        color: black; /* Cor do texto dentro do quadrado */
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media(max-width: 1200px){
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    body{
+        background-color: black;
+    }
+
+    #icone{
+        margin-bottom: -18px;
+        margin-left: 160px;
+        height: 48px;
+        width: 48px;
+    }
+
+    #consulta{
+        margin: 0;
+        margin-left: 210px;
+        margin-top: 170px;
+        margin-bottom: -50px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 22px;
+        color: white;
+    }
+
+    #climatempo{
+        margin: 0;
+        margin-bottom: -25px;
+        margin-left: 160px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 33px;
+        color: white;
+    }
+
+
+    .pesquisa{
+        width: 300px;
+        margin-left: 90px;
+        margin-top: 40px;
+        padding: 10px;
+        border-width: 1px;
+    }
+
+    #city{
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        border-radius: 10px;
+        padding: 9px;
+        border-width: 1px;
+        width: 350px;
+        margin-left: -30px;
+
+    }
+
+    #botao{    
+        width: 150px;
+        margin-left: 70px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 10px;
+        border-radius: 20px;
+        padding: 5px;
+        color: white;
+        border-width: 1px;
+        background-color: blueviolet;
+        
+    }
+
+    .search{
+        background-color:   rgb(201, 156, 253);
+        width: 500px;
+        height: 200px;
+        margin-top: 30px;
+        margin-left: 290px;
+        border-radius: 20px
+    }
+
+    #fundo{
+        display: none;
+        background-color:  rgb(201, 156, 253);
+        width: 550px;
+        height: 350px;
+        margin-top: 30px;
+        margin-left: 300px;
+        border-radius: 20px; 
+    }
+
+    #local{
+        color: black;
+        text-transform: capitalize;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        display: flexbox;
+    }
+
+    .localizacao {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+    #clima{
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        font-size: 14px;
+        margin: 0;
+        margin-top: -43px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+    }
+
+    #umidade{ 
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        
+    }
+
+    #vento{
+        color: black;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #termometro{
+        display: flex;
+        align-items: center;
+    }
+
+    #temp{
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        font-size: 54px;
+    }
+
+    .dados-adicionais {
+        display: flex;
+        justify-content: space-around;
+        margin-left: 0px; 
+        margin-top: 50px;
+    }
+
+    .quadrado-umidade,
+    .quadrado-vento {
+        background-color: rgb(182, 144, 243);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+        padding: 40px; 
+        border-radius: 10px; 
+        margin-bottom: 20px;
+    }
+
+    #umidade,
+    #vento {
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .conteudo{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img{
+        width: 25px;
+    }
+
+}
