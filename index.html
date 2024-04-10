@@ -18,10 +18,10 @@
 
     <div class="search">
         <header><i class="bx bx-left-arrow-al"></i></header>
-        <section class="pesquisa">
+        <form class="pesquisa">
             <input type="text" id="city" placeholder="Consulte o clima na cidade de..." spellcheck="false">
             <button type="submit" id="botao">Consultar clima</button>
-        </section>
+        </form>
 
     </div>
 
@@ -32,53 +32,55 @@
         </div>
     </div>
 
+  <script>  // Script JavaScript embutido para lidar com a consulta do clima
+    // Event listener para o botão de consulta
+    document.getElementById("botao").addEventListener("click", function (event) {
+        event.preventDefault(); // Impede o comportamento padrão do formulário
 
+        // Obtém o valor digitado pelo usuário (nome da cidade)
+        const city = document.getElementById("city").value;
 
-    <script>
-        document.getElementById("botao").addEventListener("click", function (event) {
-            event.preventDefault();
+        // Faz uma requisição para o servidor local buscando os dados meteorológicos da cidade fornecida
+        fetch(`http://localhost:3000/climatempo/${city}`)
+            .then((response) => response.json()) // Converte a resposta para JSON
+            .then(data => {
+                // Manipula os dados recebidos da API
+                const resultadoPesquisa = document.getElementById('fundo');
+                const formularioPesquisa = document.querySelector('.search');
 
-            const city = document.getElementById("city").value;
+                if (data.Temperatura) { // Se os dados de temperatura estiverem presentes
+                    const temperaturaArredondada = Math.round(data.Temperatura); // Arredonda a temperatura para um número inteiro
+                    const cidadeDecodificada = decodeURIComponent(data.Local); // Decodifica o nome da cidade (caso haja caracteres especiais)
 
-            fetch(`http://localhost:3000/climatempo/${city}`)
-                .then((response) => response.json())
-                .then(data => {
-                    const resultadoPesquisa = document.getElementById('fundo');
-                    const formularioPesquisa = document.querySelector('.search');
-
-                    if (data.Temperatura) {
-                    
-                        const temperaturaArredondada = Math.round(data.Temperatura);
-                        const cidadeDecodificada = decodeURIComponent(data.Local);
-
-                        resultadoPesquisa.innerHTML = `
+                    // Atualiza o HTML com os dados meteorológicos
+                    resultadoPesquisa.innerHTML = `
                         <div class="localizacao">
                             <p id="local"> ${cidadeDecodificada}</p>
                             <img src="imagens/local.png" alt="localização" id="localizacao">
                         </div>
-                      <div class="conteudo">
-                        <img class="img" src="imagens/termometro.png" alt="termômetro id="termometro">
-                        <p id="temp">  ${temperaturaArredondada}°C</p>
-                      </div>
-                      <p id="clima"><br> ${data.Clima}</p>
-                      <div class="dados-adicionais">
-                        <div class="quadrado-umidade">
-                          <p id="umidade">Umidade <br> ${data.Umidade}%</p>
+                        <div class="conteudo">
+                            <img class="img" src="imagens/termometro.png" alt="termômetro id="termometro">
+                            <p id="temp">  ${temperaturaArredondada}°C</p>
                         </div>
-                        <div class="quadrado-vento">
-                          <p id="vento">Vento <br> ${data.VelocidadeDoVento} m/s</p>
+                        <p id="clima"><br> ${data.Clima}</p>
+                        <div class="dados-adicionais">
+                            <div class="quadrado-umidade">
+                                <p id="umidade">Umidade <br> ${data.Umidade}%</p>
+                            </div>
+                            <div class="quadrado-vento">
+                                <p id="vento">Vento <br> ${data.VelocidadeDoVento} m/s</p>
+                            </div>
                         </div>
-                      </div>
-                 `;
-                        formularioPesquisa.style.display = "none";
-                        document.getElementById("fundo").style.display = 'block';
-                    } else {
-                        resultadoPesquisa.innerHTML = "<p>Erro ao obter dados meteorológicos</p>";
-                    }
-                })
-                .catch((error) => console.error('Erro ao obter dados'));
-        });
-    </script>
+                    `;
+                    formularioPesquisa.style.display = "none"; // Oculta o formulário de pesquisa
+                    document.getElementById("fundo").style.display = 'block'; // Exibe o resultado da pesquisa
+                } else {
+                    resultadoPesquisa.innerHTML = "<p>Erro ao obter dados meteorológicos</p>"; // Exibe uma mensagem de erro caso não seja possível obter os dados meteorológicos
+                }
+            })
+            .catch((error) => console.error('Erro ao obter dados')); // Exibe um erro no console caso ocorra algum problema durante a requisição
+    });
+</script>
 
 </body>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

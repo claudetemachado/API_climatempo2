@@ -1,58 +1,65 @@
+/*zera o padding e margin de todos os elementos*/
 *{
     padding: 0;
     margin: 0;
 }
 
+/* Define a cor do fundo da página como preto*/
 body{
     background-color: black;
 }
 
+/* Estiliza o ícone do clima*/
 #icone{
-    margin-bottom: -22px;
+    margin-bottom: -22px; 
     margin-left: 334px;
-    height: 55px;
-    width: 55px;
+    height: 55px; /* Define altura da imagem*/
+    width: 55px; /* define largura da imagem*/
 }
 
+/* Estiliza o título 'consulta'*/
 #consulta{
     margin: 0;
-    margin-left: 390px;
-    margin-top: 170px;
-    margin-bottom: -60px;
+    margin-left: 390px; /* Adiciona margim na esquerda */
+    margin-top: 170px;  /* adiciona margim na parte de cima da página*/
+    margin-bottom: -60px; /* Negativa a margim de baixo do texto (coloca o texto mais para baixo)*/
     font-family: 'Poppins', sans-serif;
-    font-size: 27px;
-    color: white;
+    font-size: 27px; /* Define tamanho da fonte*/ 
+    color: white; /* Cor da letra*/
 }
 
+/* Estiliza o título 'clima tempo'*/
 #climatempo{
     margin: 0;
     margin-bottom: -25px;
-    margin-left: 340px;
+    margin-left: 340px; 
     font-family: 'Poppins', sans-serif;
     font-size: 43px;
     color: white;
 }
 
-
+/* Estiliza o formulário da pesquisa*/
 .pesquisa{
-    width: 300px;
+    width: 300px; 
     margin-left: 90px;
     margin-top: 40px;
     padding: 10px;
-    border-width: 1px;
+    border-width: 1px; /* Define a borda */
 }
 
+/* estiliza o campo de entrada de texto para a cidade*/
 #city{
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 10px; /* Arredonda as bordas*/
     padding: 9px;
-    border-width: 1px;
+    border-width: 1px; /* Define tamanho da borda*/
     width: 350px;
     margin-left: -30px;
 
 }
 
+/*Estiliza o botão de consulta*/
 #botao{    
     width: 150px;
     margin-left: 70px;
@@ -63,12 +70,13 @@ body{
     padding: 5px;
     color: white;
     border-width: 1px;
-    background-color: blueviolet;
+    background-color: blueviolet; /* Define a cor do botão*/
     
 }
 
+/* Estiliza a área de pesquisa*/
 .search{
-    background-color:   rgb(201, 156, 253);
+    background-color:   rgb(201, 156, 253); /* Cor do fundo*/
     width: 500px;
     height: 200px;
     margin-top: 30px;
@@ -76,6 +84,7 @@ body{
     border-radius: 20px
 }
 
+/* Estiliza o form do resultado da resposta*/
 #fundo{
     display: none;
     background-color:  rgb(201, 156, 253);
@@ -86,92 +95,88 @@ body{
     border-radius: 20px; 
 }
 
+/* estiliza o nome da cidade*/
 #local{
     color: black;
-    text-transform: capitalize;
+    text-transform: capitalize;  /* Faz com que a primeira letra fique maiúscula*/
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
-    display: flexbox;
+    display: flex;
 }
 
+/* Estiliza a imagem da localização*/
 .localizacao{
     margin: 0;
     height: 30px;
     width: auto;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+    flex-direction: row-reverse; /* Inverte a ordem dos itens */
+    justify-content: flex-end; /* Alinha a imagem na extremidade final do container  */
     padding: 10px;
 
 }
 
+/* Estiliza descrição do clima*/
 #clima{
     color: black;
     font-family: 'Poppins', sans-serif;
-    text-align: center;
+    text-align: center; /* Alinha o texto no centro */
     font-size: 18px;
     margin: 0;
     margin-top: -43px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-#umidade{ 
-    color: black;
-    font-family: 'Poppins', sans-serif;
-    
-}
-
-#vento{
-    color: black;
-    font-family: 'Poppins', sans-serif;
-}
-
+/*estiliza imagem da temperatura*/
 #termometro{
     display: flex;
-    align-items: center;
+    align-items: center;    /* alinha a imagem no cento do container*/
+    width: 40px
 }
 
+/* Estiliza descrição da temperatura */
 #temp{
-    color: black;
+    color: black; /* Cor do texto*/
     font-family: 'Poppins', sans-serif;
     font-size: 84px;
 }
 
+/* Estiliza as informações de umidade e velocidade do vento*/
 .dados-adicionais {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Adiciona espaço em volta */
     margin-left: 0px; 
     margin-top: 50px;
 }
 
+/* Estiliza os quadrados de fundo das informações de umidade e vento*/
 .quadrado-umidade,
 .quadrado-vento {
-    background-color: rgb(182, 144, 243);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    background-color: rgb(182, 144, 243); /* Define a cor de fundo dos quadrados*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Coloca sombra nos quadrados*/
     padding: 50px; 
     border-radius: 10px; 
 }
 
+/* Estiliza as informações de umidade e vento*/
 #umidade,
 #vento {
     color: black;
     font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona sombra no texto*/
 }
 
+/* Estiliza as informçoes do formulario de temperatura, clima, umidade e vento*/
 .conteudo{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* alinha  os itens na vertical */
+    justify-content: center; /* alinha os itens na horizontal*/
 }
 
-.img{
-    width: 40px;
-}
-
+/* Define estilos para dispositivos com largura máxima de 640px */
 @media(max-width: 640px){
     #icone {
   
@@ -347,6 +352,7 @@ body{
     }
 }
 
+/* Define estilos para dispositivos com largura máxima de 1200px */
 @media(max-width: 1200px){
     *{
         padding: 0;
